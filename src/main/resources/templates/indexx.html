@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Parking Cars</h1>
+    <form th:action="@{/dataprocess}" method="get">
+        <input type="text" name="name" placeholder="Enter CarModel"><br>
+        <input type="number" name="number" placeholder="Enter Number"><br>
+        <input type="submit" value="Save">
+    </form>
+    <table border="1">
+    	<tr>
+    		<th>Car Model</th>
+    		<th>Car Lance Number</th>
+    	</tr>
+    	<tr th:each="Carparking : ${cplist}">
+    		<td th:text="${Carparking.name}"></td>
+    		<td th:text="${Carparking.number}"></td>
+    	</tr>
+    </table>
+</body>
+</html>
